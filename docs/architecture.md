@@ -7,11 +7,11 @@ This system uses computer vision and sensor fusion to detect tow vehicle lightin
 **Hybrid Approach: Perception + Logic**
 
 Unlike pure machine learning approaches that require massive training datasets, this system separates concerns:
-- **CV Layer**: Detects and tracks physical light sources (what exists, where, when)
-- **Logic Layer**: Infers semantic meaning from patterns (what it means)
-- **Control Layer**: Executes appropriate trailer responses (what to do)
+- **CV Layer**: Detects and tracks physical light sources (what exists, where, when). Based on norfair for object detection.
 
-This architecture acknowledges that vehicle lighting follows physical and regulatory constraints, not arbitrary patterns. A brake light is functionally defined by its behavior and context, not by statistical correlation.
+- **Logic Layer**: Infers semantic meaning from patterns (what it means). Rolling buffer of bayesian classification probabilities follows objects, with temporal subprocesses to populate the dict.
+
+- **Control Layer**: Executes appropriate trailer responses (what to do)
 
 ## System Components
 
