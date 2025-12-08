@@ -10,10 +10,13 @@ This eliminates the problem of trailer wiring.
 
 A further implementation can use existing hardware and new spatial intelligence techniques to double-check for correct trailer hitching.
 
-Technical structure:
+Stack:
 
-OpenCV
+OpenCV YOLOv8
 Python
+Norfair
+
+
 
 CV layer: detection and tracking of light sources
 Logic layer: inference of intent from patterns
