@@ -4,26 +4,22 @@ Wiring brake controllers for a car to tow a trailer can be tricky, and they can 
 # Approach
 Instead, let's make trailers smarter using small cameras and computers. We can use computer vision techniques to detect the actions of a tow vehicle's lights based on the brightness, location, and changes in these values over time.
 
-Then, we can use that data to control trailer lights and brakes. This eliminate the problem of altering the wiring of a tow vehicle.
+Then, we can use that data to control trailer lights and brakes. This eliminate the problem of altering the wiring of a tow vehicle. In the future, we can add more computer vision capabilities.
 
-# Pitfalls
-
-This has two main pitfalls: occlusion of the camera especially in inclement weather, failure of the tow vehicle lights, and failure of the algorithm.
-
-An additional safety framework is provided ensure correct operation, and to design, guard, and warn against hazards.
-
-
+# Challenges
+- Vehicle light configurations vary
+- Weather conditions vary
+- Vehicle pose varies
+- Other lights will be visible beyond the envelope of the tow vehicle
+- Being a safety critical application, a safety testing framework must be constructed
+- Failsafe behavior must achieve a minimum risk condition
 
 # Stack
 
 - YOLOv8
 - Python
 - Norfair
-
-
-CV layer: detection and tracking of light sources
-Logic layer: inference of intent from patterns
-Control layer: trailer light actuation based on inferred state
+- Boolean logic
 
 # Literature Search
 
